@@ -1,0 +1,158 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'main/css/home.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/css/normaliz.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/css/nav.css' %}" />
+    <title>homepage</title>
+  </head>
+  <body>
+    {% include 'main/nav.html' %}
+
+    <div class="header">
+      <div class="container">
+        <img class="logo" src="{% static 'main/logo.jpg'%}" />
+        <button class="account-class" href="#acc">
+          <i class="fa-solid fa-person"></i>Login
+        </button>
+      </div>
+    </div>
+
+    <div class="intro-text">
+      <img style="margin-top: 30px" height="120px" src="logo.jpg " alt="" />
+      <div class="facOld">
+        <b>Welcome, FCI Community</b>
+        <p>This is your homepage</p>
+      </div>
+    </div>
+
+    <div class="landing">
+      <div class="texts">
+        <div class="info info-lg">
+          <b>For General programs</b>
+          <p class="header">
+            The midterm exams for the Fall Semester 2022-2023 will take place
+            during the period from Saturday November 19, 2022 till Thursday
+            November 24, 2022, as per the attached schedules. Your seating
+            location for each course you are registered in will be announced on
+            the E-Comm. Good luck to all.
+          </p>
+        </div>
+        <div class="info">
+          <b>Summer Semester 2021-2022</b>
+
+          <p class="header">
+            The summer semester for this academic year will start coming Monday
+            (July 18, 2022) and will continue till Thursday (August 25, 2022).
+            As for the final exams, they will be during the period from Saturday
+            (August 27, 2022) till Monday (August 29, 2022). The provided
+            schedules are preliminary schedules for those offered courses with
+            lectures (both General programs and Special programs). As for the
+            courses for "Graduation Purposes", they will be furnished to you
+            later during the coming week after all results are posted. Wishing
+            you all the best. Note: The sections and labs will start next week
+            (Saturday July 23, 2022). A new schedule with the sections and labs
+            will be furnished later.
+          </p>
+        </div>
+        <div class="info info-lg">
+          <b>MidTerm</b>
+
+          <p class="header">
+            The midterm exams for the Spring semester 2021-2022 will be held
+            during the period from Saturday April 9, 2022 till Thursday April
+            14, 2022 according to the posted schedule for the General Programs
+            and the Special Programs . Best wishes to all.
+          </p>
+        </div>
+        <div class="info">
+          <b>Final Exam</b>
+
+          <p class="header">
+            Final exams will start on Thursday January 13, 2022 according to the
+            attached schedule and will end on Thursday February 3, 2022. Kindly
+            check the dates and time slots for your respective exams. Please
+            note that the exam for the Creative Thinking and Communication
+            Skills course to be held on Tuesday January 18, 2022 will be for one
+            hour only. The first level class will be divided into two groups;
+            the first group will take the exam from 9:00 AM till 10:00 AM, while
+            the second group will take the exam from 10:30 AM till 11:30 AM.
+            Therefore the exams for the second slot on that day will be from
+            12:30 PM till 2:30 PM. Good luck to all of you.
+          </p>
+        </div>
+        <div class="info info-lg">
+          <b>For the Special programs </b>
+
+          <p class="header">
+            courses and Office-based courses) are requested to contact the
+            instructors of these courses to determine the requirements of the
+            courses and set the dates for the midterms. Already some instructors
+            have scheduled the midterms for their courses. It is the
+            responsibility of the students to contact their instructors. Note
+            that the final exams will be scheduled during the period from 18
+            till 20 September. Good luck to all.
+          </p>
+        </div>
+        <div class="info">
+          <b>To General Programs' Students</b>
+
+          <p class="header">
+            The midterm exams will be held during the period from Thursday 25
+            November till Thursday 2 December, 2021 according to the announced
+            schedule. Please note that exams for the Entrepreneurship course and
+            the Software Engineering 1 course will be decided upon later outside
+            the exams schedule. Kindly, check the website occasionally for any
+            updates in the schedule that could take place. FCAI's family wishes
+            you all the best.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="modal hidden">
+      <div class="headerss">
+        <h2>Sign in</h2>
+        <button class="close-modal">&times;</button>
+      </div>
+      <hr />
+      <label for="name">User name:</label>
+      <input type="text" id="name" name="name" placeholder="Your name" />
+      <label for="pass">Password:</label>
+      <input type="text" id="pass" name="pass" placeholder="Your Password" />
+      <form>
+        <input type="checkbox" name="check" value="1" />
+        Remember me
+      </form>
+      <button
+        style="
+          background-color: #007bff;
+          color: white;
+          border-radius: 5px;
+          width: 60px;
+          height: 30px;
+        "
+      >
+        Sign in
+      </button>
+    </div>
+    <div class="overlay hidden"></div>
+    <script>
+      const modalBtn = document.querySelector(".account-class");
+      const loginModal = document.querySelector(".modal");
+      const closemodel = document.querySelector(".close-modal");
+
+      modalBtn.onclick = () => {
+        loginModal.classList.toggle("hidden");
+      };
+
+      closemodel.onclick = () => {
+        loginModal.classList.toggle("hidden");
+      };
+    </script>
+  </body>
+</html>

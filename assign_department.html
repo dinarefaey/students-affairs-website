@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'main/css/assignment.css' %}" />
+    <link rel="stylesheet" href="{% static 'main/css/nav.css' %}" />
+    <title>Document</title>
+    <style>
+      .alert{
+        padding: 8px;
+        width: 18rem;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        color: white;
+      }
+      .alert-error{
+        background-color: rgb(161, 24, 24);
+      }
+      .alert-success{
+        background-color: rgb(24, 161, 58);
+      }
+    </style>
+  </head>
+  <body>
+        {% include 'main/nav.html' %}
+
+    <section class="">
+      {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+      </div>
+      {% endfor %}
+      {% endif %}
+      <div class="error"></div>
+      <div class="department_form">
+        <div class="form_head">
+          <h3>Student Department</h3>
+        </div>
+        <form method="post">
+          {% csrf_token %}
+          {% for field in form %}
+          <div class="form-control">
+            <label >{{field.label}}</label>
+            {{field}}
+          </div>
+          {% endfor %}
+          
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

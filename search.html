@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/search.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/table.css' %}">
+      <link rel="stylesheet" href="{% static 'main/css/nav.css' %}" />
+
+    <title> search for Student</title>
+        <style>
+           table, th, td {
+           border:1px solid black;
+           }
+            h3{text-align: center;}
+        </style>
+    </head>
+     <body  >
+            {% include 'main/nav.html' %}
+
+        <br>
+          <div class="search">
+          <h3  align="center" class="ss"> Enter student name  </h3>
+          <form method="GET" action="/search" align="center">  
+            <input type="text" placeholder="Search.." name="name"/> 
+            <button type="submit">search</button> 
+            </form>
+        </div>
+        <table>
+          <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>email</td>
+            <td>Date of Birth</td>
+            <td>GPA</td>
+            <td>Gender</td>
+            <td>Level</td>
+            <td>Status</td>
+            <td>Department</td>
+            <td>Mobile Number</td>
+            <td>Action</td>
+          </tr>
+          {% for st in students%}
+          <tr>
+            <td>{{st.id}}</td>
+            <td>{{st.name}}</td>
+            <td>{{st.email}}</td>
+            <td>{{st.date_of_birth|date:"d-m-Y"}}</td>
+            <td>{{st.gpa}}</td>
+            <td>{{st.gender}}</td>
+            <td>{{st.level}}</td>
+            <td>{{st.status}}</td>
+            <td>{{st.department}}</td>
+            <td>{{st.mobile}}</td>
+            <td>
+              <a href="/update/department/{{st.id}}">
+                Update department
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+    </body>
+</html>

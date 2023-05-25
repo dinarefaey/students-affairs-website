@@ -1,0 +1,53 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  padding: 8px;
+}
+  
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+  
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+tr:first-child{
+  background-color: #15313f;
+  color: white;
+}
+
+.btn{
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  text-decoration: none;
+  color: white;
+}
+
+.delete{
+  background-color: rgb(201, 23, 23);
+
+}
+.delete:hover{
+  background-color: rgb(222, 12, 12);
+}
+
+.update {
+  background-color: rgb(23, 115, 201);
+
+}
+.update:hover {
+  background-color: rgb(23, 115, 222);
+}
+.status{
+  background-color: rgb(23, 150, 103);
+}
+.status:hover{
+  background-color: rgb(23, 201, 103);
+}

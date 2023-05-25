@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/update.css' %}">
+        <link rel="stylesheet" href="{% static 'main/css/nav.css' %}" />
+
+    <title>Update</title>
+
+
+     <body>
+        {% include 'main/nav.html' %}
+        <section class="">
+            <div class="error">
+            </div>
+            <div class="department_form">
+                <div class="form_head">
+                    <h3>Updating info</h3>
+                </div>
+                <form method="post">
+                    {% csrf_token %}
+                     {% for field in form %}
+                    <div class="form-control">
+                        <label >{{field.label}}</label>
+                        {{field}}
+                        {%for error in field.errors%}
+                        <div class="invalid-feedback">
+                            {{ error }}
+                        </div>
+                        {%endfor%}
+                    </div>
+                    {% endfor %}
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+
+       
+       
+    </body>
+
+
+
+
+
+
+
+
+</html> 

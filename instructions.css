@@ -1,0 +1,32 @@
+.head {
+  text-align: center;
+  height: 40px;
+}
+
+.head1,
+.head3,
+.head5,
+.head7 {
+  margin-left: 70px;
+  margin-right: 70px;
+  padding: auto;
+  margin-top: 15px;
+  padding: 20px;
+  background: linear-gradient(#318ea5, #6dd5ed);
+  color: rgba(255, 255, 255, 0.864);
+  border-radius: 10px;
+  border: 1px solid #00000017;
+  box-shadow: 0 0 5px #00000036;
+}
+.head2,
+.head4,
+.head6 {
+  margin-left: 70px;
+  margin-right: 70px;
+  margin-top: 15px;
+  padding: 20px;
+  background-color: #8080801a;
+  border-radius: 10px;
+  border: 1px solid #00000017;
+  box-shadow: 0 0 5px #00000036;
+}
